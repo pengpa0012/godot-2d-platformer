@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bvm7ottyykwkm"]
 
 [ext_resource type="PackedScene" uid="uid://maqjce46rx84" path="res://Scenes/player.tscn" id="1_rwmap"]
-[ext_resource type="PackedScene" uid="uid://n864tnms78r4" path="res://Scenes/enemy.tscn" id="2_36cxe"]
+[ext_resource type="Script" path="res://Script/EnemiesGenerator.gd" id="2_uu86k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qgmoc"]
 size = Vector2(80.5, 652)
@@ -25,14 +25,13 @@ position = Vector2(1090, 116)
 position = Vector2(101, 207)
 shape = SubResource("RectangleShape2D_qgmoc")
 
-[node name="Enemies" type="Node2D" parent="."]
+[node name="EnemiesGenerator" type="Node2D" parent="."]
 position = Vector2(1.189, 0)
 rotation = 0.0691272
+script = ExtResource("2_uu86k")
 
-[node name="Enemy" parent="Enemies" instance=ExtResource("2_36cxe")]
-position = Vector2(130, 56.1547)
-rotation = -0.0693412
+[node name="Timer" type="Timer" parent="EnemiesGenerator"]
+wait_time = 2.0
+autostart = true
 
-[node name="Enemy2" parent="Enemies" instance=ExtResource("2_36cxe")]
-position = Vector2(854.412, 37.0724)
-rotation = -0.0693412
+[connection signal="timeout" from="EnemiesGenerator/Timer" to="EnemiesGenerator" method="_on_timer_timeout"]

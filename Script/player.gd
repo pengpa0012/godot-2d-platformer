@@ -8,7 +8,6 @@ func _physics_process(delta):
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	print(get_viewport().get_visible_rect().size)
 	var direction = Input.get_axis("ui_left", "ui_right")
 	if direction:
 #		if self.position.x == 0 || self.position.x >= 1152:
@@ -18,3 +17,7 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+
+
+func _on_area_2d_body_entered(body):
+	print(body)
