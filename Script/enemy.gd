@@ -14,8 +14,3 @@ func _physics_process(delta):
 		velocity.y += gravity * 0.01 * delta
 
 	move_and_slide()
-
-#	TODO
-#	-Add player move limit
-#	-Fix viewport issue
-#	-

@@ -8,30 +8,32 @@ size = Vector2(80.5, 652)
 
 [node name="World" type="Node2D"]
 
-[node name="Player" parent="." instance=ExtResource("1_rwmap")]
+[node name="CanvasGroup" type="CanvasGroup" parent="."]
+
+[node name="Player" parent="CanvasGroup" instance=ExtResource("1_rwmap")]
 position = Vector2(562, 590)
 
-[node name="wall3" type="StaticBody2D" parent="."]
+[node name="wall3" type="StaticBody2D" parent="CanvasGroup"]
 position = Vector2(1090, 116)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="wall3"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasGroup/wall3"]
 position = Vector2(-1125, 212)
 shape = SubResource("RectangleShape2D_qgmoc")
 
-[node name="wall4" type="StaticBody2D" parent="."]
+[node name="wall4" type="StaticBody2D" parent="CanvasGroup"]
 position = Vector2(1090, 116)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="wall4"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasGroup/wall4"]
 position = Vector2(101, 207)
 shape = SubResource("RectangleShape2D_qgmoc")
 
-[node name="EnemiesGenerator" type="Node2D" parent="."]
+[node name="EnemiesGenerator" type="Node2D" parent="CanvasGroup"]
 position = Vector2(1.189, 0)
 rotation = 0.0691272
 script = ExtResource("2_uu86k")
 
-[node name="Timer" type="Timer" parent="EnemiesGenerator"]
+[node name="Timer" type="Timer" parent="CanvasGroup/EnemiesGenerator"]
 wait_time = 2.0
 autostart = true
 
-[connection signal="timeout" from="EnemiesGenerator/Timer" to="EnemiesGenerator" method="_on_timer_timeout"]
+[connection signal="timeout" from="CanvasGroup/EnemiesGenerator/Timer" to="CanvasGroup/EnemiesGenerator" method="_on_timer_timeout"]

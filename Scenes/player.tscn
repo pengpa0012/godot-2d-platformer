@@ -4,10 +4,10 @@
 [ext_resource type="Script" path="res://Script/player.gd" id="1_unsp6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mslii"]
-size = Vector2(64, 64)
+size = Vector2(68, 68)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xywf2"]
-size = Vector2(64, 64)
+size = Vector2(29, 23)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_unsp6")
@@ -24,7 +24,6 @@ position = Vector2(-1, 0)
 shape = SubResource("RectangleShape2D_mslii")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 0)
 shape = SubResource("RectangleShape2D_xywf2")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
