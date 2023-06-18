@@ -26,4 +26,9 @@ shape = SubResource("RectangleShape2D_mslii")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_xywf2")
 
+[node name="Gun" type="Node2D" parent="."]
+
+[node name="Marker2D" type="Marker2D" parent="Gun"]
+position = Vector2(0, -57)
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

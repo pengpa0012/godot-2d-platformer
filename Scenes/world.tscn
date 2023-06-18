@@ -40,12 +40,23 @@ script = ExtResource("2_uu86k")
 wait_time = 2.0
 autostart = true
 
-[node name="Deadzone" type="Area2D" parent="."]
+[node name="Deadzone" type="Area2D" parent="CanvasGroup"]
 script = ExtResource("3_8ptv8")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Deadzone"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasGroup/Deadzone"]
 position = Vector2(578, 711)
 shape = SubResource("RectangleShape2D_k6mxa")
 
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="CanvasGroup/Deadzone"]
+position = Vector2(573, -242)
+shape = SubResource("RectangleShape2D_k6mxa")
+
+[node name="Score" type="RichTextLabel" parent="."]
+offset_left = 16.0
+offset_top = 9.0
+offset_right = 420.0
+offset_bottom = 35.0
+text = "SCORE:"
+
 [connection signal="timeout" from="CanvasGroup/EnemiesGenerator/Timer" to="CanvasGroup/EnemiesGenerator" method="_on_timer_timeout"]
-[connection signal="body_entered" from="Deadzone" to="Deadzone" method="_on_body_entered"]
+[connection signal="body_entered" from="CanvasGroup/Deadzone" to="CanvasGroup/Deadzone" method="_on_body_entered"]
