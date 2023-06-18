@@ -11,5 +11,6 @@ func _physics_process(delta):
 
 func _on_area_2d_body_entered(body):
 	if "Enemy" in body.name:
+		Global.score += 10
 		self.queue_free()
 		body.queue_free()
