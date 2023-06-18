@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://dgne2oi70dylb"]
+
+[node name="DeathScreen" type="Node2D"]
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 592.0
+offset_top = 292.0
+offset_right = 858.0
+offset_bottom = 395.0
+text = "RESTART"
+
+[node name="Button3" type="Button" parent="."]
+offset_left = 281.0
+offset_top = 293.0
+offset_right = 546.0
+offset_bottom = 396.0
+text = "QUIT"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 469.0
+offset_top = 185.0
+offset_right = 876.0
+offset_bottom = 212.0
+text = "FINAL SCORE: 23123123"
