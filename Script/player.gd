@@ -23,7 +23,11 @@ func _physics_process(delta):
 
 func _on_area_2d_body_entered(body):
 	if "Enemy" in body.name:
+		Global.life -= 1
 		body.queue_free()
+		if Global.life == 0:
+			self.queue_free()
+			get_tree().change_scene_to_file("res://Scenes/death_screen.tscn")
 
 func shoot():
 	var bullet = bullet_scene.instantiate()

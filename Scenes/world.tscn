@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://bvm7ottyykwkm"]
 
 [ext_resource type="PackedScene" uid="uid://maqjce46rx84" path="res://Scenes/player.tscn" id="1_rwmap"]
+[ext_resource type="Script" path="res://Script/world.gd" id="1_sr66p"]
 [ext_resource type="Script" path="res://Script/EnemiesGenerator.gd" id="2_uu86k"]
 [ext_resource type="Script" path="res://Script/Deadzone.gd" id="3_8ptv8"]
-[ext_resource type="Script" path="res://Script/Score.gd" id="4_nlg5u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qgmoc"]
 size = Vector2(80.5, 652)
@@ -12,6 +12,7 @@ size = Vector2(80.5, 652)
 size = Vector2(1314, 24)
 
 [node name="World" type="Node2D"]
+script = ExtResource("1_sr66p")
 
 [node name="CanvasGroup" type="CanvasGroup" parent="."]
 
@@ -52,12 +53,17 @@ shape = SubResource("RectangleShape2D_k6mxa")
 position = Vector2(573, -242)
 shape = SubResource("RectangleShape2D_k6mxa")
 
+[node name="Life" type="RichTextLabel" parent="."]
+offset_left = 195.0
+offset_top = 9.0
+offset_right = 353.0
+offset_bottom = 49.0
+
 [node name="Score" type="RichTextLabel" parent="."]
 offset_left = 16.0
 offset_top = 9.0
-offset_right = 420.0
+offset_right = 118.0
 offset_bottom = 35.0
-script = ExtResource("4_nlg5u")
 
 [connection signal="timeout" from="CanvasGroup/EnemiesGenerator/Timer" to="CanvasGroup/EnemiesGenerator" method="_on_timer_timeout"]
 [connection signal="body_entered" from="CanvasGroup/Deadzone" to="CanvasGroup/Deadzone" method="_on_body_entered"]

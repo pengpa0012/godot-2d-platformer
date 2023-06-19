@@ -19,12 +19,11 @@ offset_right = 546.0
 offset_bottom = 396.0
 text = "QUIT"
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
+[node name="FinalScore" type="RichTextLabel" parent="."]
 offset_left = 469.0
 offset_top = 185.0
 offset_right = 876.0
 offset_bottom = 212.0
-text = "FINAL SCORE: 23123123"
 
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
