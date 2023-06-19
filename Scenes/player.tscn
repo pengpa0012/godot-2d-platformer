@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://maqjce46rx84"]
+[gd_scene load_steps=7 format=3 uid="uid://maqjce46rx84"]
 
 [ext_resource type="Texture2D" uid="uid://d3hjc7k3m0qr4" path="res://icon.svg" id="1_0jr7g"]
 [ext_resource type="Script" path="res://Script/player.gd" id="1_unsp6"]
+[ext_resource type="AudioStream" uid="uid://b2wi5u3it6s1p" path="res://Assets/sounds/pew.mp3" id="3_3qbb4"]
+[ext_resource type="AudioStream" uid="uid://b076hequkpsky" path="res://Assets/sounds/death.mp3" id="3_y8te7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mslii"]
 size = Vector2(68, 68)
@@ -30,5 +32,11 @@ shape = SubResource("RectangleShape2D_xywf2")
 
 [node name="Marker2D" type="Marker2D" parent="Gun"]
 position = Vector2(0, -57)
+
+[node name="Death" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_y8te7")
+
+[node name="PewSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_3qbb4")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

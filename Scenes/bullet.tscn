@@ -4,23 +4,23 @@
 [ext_resource type="Texture2D" uid="uid://d3hjc7k3m0qr4" path="res://icon.svg" id="1_p6xn1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eia34"]
-size = Vector2(2.5, 14.5)
+size = Vector2(4.25, 18.696)
 
 [node name="Bullet" type="CharacterBody2D"]
 script = ExtResource("1_g70qe")
 
 [node name="Icon" type="Sprite2D" parent="."]
-scale = Vector2(0.015625, 0.109375)
+position = Vector2(5.96046e-08, -0.499999)
+scale = Vector2(0.03125, 0.148438)
 texture = ExtResource("1_p6xn1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 0.272)
 shape = SubResource("RectangleShape2D_eia34")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, 0.142)
+position = Vector2(0, -0.652)
 shape = SubResource("RectangleShape2D_eia34")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

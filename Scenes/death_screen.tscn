@@ -1,6 +1,9 @@
-[gd_scene format=3 uid="uid://dgne2oi70dylb"]
+[gd_scene load_steps=2 format=3 uid="uid://dgne2oi70dylb"]
+
+[ext_resource type="Script" path="res://Script/death_screen.gd" id="1_rfkmr"]
 
 [node name="DeathScreen" type="Node2D"]
+script = ExtResource("1_rfkmr")
 
 [node name="Button2" type="Button" parent="."]
 offset_left = 592.0
@@ -22,3 +25,6 @@ offset_top = 185.0
 offset_right = 876.0
 offset_bottom = 212.0
 text = "FINAL SCORE: 23123123"
+
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]

@@ -27,7 +27,7 @@ func _on_area_2d_body_entered(body):
 
 func shoot():
 	var bullet = bullet_scene.instantiate()
-
+	get_node("PewSound").play()
 	get_parent().add_child(bullet)
 	
 	bullet.position = $Gun/Marker2D.global_position
