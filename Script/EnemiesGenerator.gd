@@ -6,6 +6,7 @@ const enemy_scene = preload("res://Scenes/enemy.tscn")
 func spawn_enemy():
 	var enemy = enemy_scene.instantiate()
 	enemy.position.x = randf_range(50, get_viewport_rect().size.x)
+	enemy.position.y = -50
 	add_child(enemy)
 
 

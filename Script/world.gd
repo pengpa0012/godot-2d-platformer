@@ -7,3 +7,9 @@ func _ready():
 func _process(delta):
 	$Score.text = "Score: {score}".format({"score": Global.score})
 	$Life.text = "Life: {life}".format({"life": Global.life})
+
+
+# TODO
+# -Add Assets
+#	-Bullet/Player/Enemies/BG
+# -Add bullet/death/hurt particles
