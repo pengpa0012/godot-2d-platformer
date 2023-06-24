@@ -4,8 +4,12 @@ extends CharacterBody2D
 const SPEED = 300.0
 @onready var screen
 const bullet_scene = preload("res://Scenes/bullet.tscn")
+@onready var _pivot = $Gun/Marker2D
 
 func _physics_process(delta):
+	
+	var mouse_position = get_global_mouse_position()
+	_pivot.look_at(mouse_position)
 	
 	if !get_node("Ouch").playing:
 		if Global.life == 0:
@@ -37,4 +41,5 @@ func shoot():
 	get_parent().add_child(bullet)
 	
 	bullet.position = $Gun/Marker2D.global_position
-#	bullet.velocity = get_global_mouse_position() - bullet.position\
+	bullet.velocity = (get_global_mouse_position() - bullet.position).normalized()
+	print(bullet.velocity)
